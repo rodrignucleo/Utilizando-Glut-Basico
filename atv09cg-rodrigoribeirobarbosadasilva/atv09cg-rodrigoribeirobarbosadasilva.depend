@@ -229,3 +229,8 @@
 	<stddef.h>
 	<GL/gl.h>
 
+1664661061 source:c:\users\rodri\onedrive\documentos\github\utilizando-glut-basico\atv09cg-rodrigoribeirobarbosadasilva\main.cpp
+	<stdio.h>
+	<GL/gl.h>
+	<GL/glut.h>
+
