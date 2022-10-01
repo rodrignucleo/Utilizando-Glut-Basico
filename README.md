@@ -2,5 +2,5 @@
 
 
  <div alingn="center">
-  <img src="\gif_apresentacao.gif" target="_blank">
+ <a> <img src="*\gif_apresentacao.gif" target="_blank"></a>
 </div>
