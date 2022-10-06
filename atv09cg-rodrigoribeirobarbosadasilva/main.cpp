@@ -13,6 +13,20 @@ int contador=0;
 float win;                          // win (window), vai definir o tamanho de cada viewport (quanto maior valor de win, mais longe da tela)
 float aspecto;                      // aspecto: variável para controlar windowsize
 int largura, altura;                //largura e altura da minha janela
+int rotacaoCod=0;
+
+void timerPonto(int passo){                //função timerPonto, que verifica o local do ponto para saber quando deve parar de subir (ou descer) o ponto no eixo y
+    switch(rotacaoCod){
+        case 1:
+                rotacao+=1;
+                glutPostRedisplay();                 //chama a função desenha toda vez que for necessária
+                glutTimerFunc(50,timerPonto,1);
+                break;
+        case 0:
+                printf("\nParou!!");
+                break;
+    }
+}
 
 void quadrado(){
     glBegin(GL_QUADS);                      //lBegin e glEnd delimitam os vértices que definem uma primitiva ou um grupo de primitivas semelhantes (definida como parâmetro).
@@ -152,8 +166,11 @@ void gerenciaMouse(int botao, int estado, int x, int y){      //Parâmetros de en
         }}
     else if(botao == GLUT_LEFT_BUTTON){
             if(estado == GLUT_DOWN){                              //O parâmetro state pode ser GLUT_UP ou GLUT_DOWN.
-                rotacao+=1;
-                printf("%d\n", rotacao);
+                switch(rotacaoCod){
+                    case 0: rotacaoCod = 1;
+                            glutTimerFunc(10,timerPonto,1);
+                            printf("\nRodando!!");break;
+                    case 1: rotacaoCod=0; break;}
             }}
     glutPostRedisplay();                                      //chama a função desenha toda vez que for necessária
 }
