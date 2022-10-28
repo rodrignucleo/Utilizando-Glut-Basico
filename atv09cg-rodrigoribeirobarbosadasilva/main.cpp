@@ -70,7 +70,7 @@ void linha(){
 void contorno(){                            //desenha linhas para ter melhor visualização das viewports
     glLineWidth(3);                         //adiciona espessura da linha
     glBegin(GL_LINE_LOOP);                  //lBegin e glEnd delimitam os vértices que definem uma primitiva ou um grupo de primitivas semelhantes (definida como parâmetro).
-        glColor3f(0,0,0);                   //adiciona cor na linha
+        glColor3f(1,0,0);                   //adiciona cor na linha
         glVertex2f(-win*aspecto, -win);     //inferior esquerdo
         glVertex2f(-win*aspecto, win);      //superior esquerdo
         glVertex2f(win*aspecto, win);       //superior direito
